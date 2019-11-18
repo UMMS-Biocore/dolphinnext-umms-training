@@ -57,54 +57,11 @@ If you prefer, you can click on the video links to follow the tutorial in a vide
 
 # Before you start
 
-## DolphinNext docker version
-
-DolphinNext can be run standalone using a docker container.
-First docker image need to be build unless you want to use prebuild from dockerhub. So, any change in the Dockerfile requires to build the image. But in this tutorial, we will pull it and start the container.
-
-  * Note: If you don't have docker installed, please go to http://dolphinnext.umassmed.edu and let us know about it (biocore@umassmed.edu). We will set an account for you.
-
-## Pull the docker image
-
-
-1. Pull DolphinNext-studio
-```   
-docker pull ummsbiocore/dolphinnext-studio
-```
-
-## Start the container
-
-
-1. We move database outside of the container to be able to keep the changes in the database every time you start the container.
-Please choose a directory in your machine to mount. For example, I will use ~/export directory for this purpose.
-```
-sudo mkdir -p ~/export
-```
-2. While running the container;
-```
-docker run --privileged -m 10G -p 8080:80 -v ~/export:/export -ti ummsbiocore/dolphinnext-studio /bin/bash
-```
-3. After you start the container, you need to start the mysql and apache server using the command below;
-```
-startup
-```
-4. Now, you can open your browser to access DolphinNext using the url below.
-
-http://localhost:8080/dolphinnext
+Please go to https://camp.dolphinnext.com/ and login into your account with UMASS username and password. If you have an issue about login, please let us know about it (biocore@umassmed.edu). We will set an account for you.
 
 # Tutorial guide
 
 This guide will walk you through how to start using DolphinNext pipelines and creating new pipelines.
-
-## Getting Started
-
-First, you need to access DolphinNext web page: https://localhost:8080/dolphinnext and click **Sign Up** or **Sign in with Google** buttons. You will be asked to enter some information about your institution, username, etc. 
-
-
-<img src="dolphinnext_images/sign_in.png" width="80%">
-
-Once you login, you will be the administrator of this mirror. You can add more users to your system and manage them from profile/admin section.
-
 
 ## Exercise 1 - Creating processes
 
