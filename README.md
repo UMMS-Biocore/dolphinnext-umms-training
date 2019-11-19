@@ -65,7 +65,7 @@ This guide will walk you through how to start using DolphinNext pipelines and cr
 
 ## Exercise 1 - Creating processes
 
-Once logged in, click on the pipeline tab in the top left of the screen to access pipeline builder page. 
+Once logged in, click on the "Pipeline" button in the top left of the screen to access pipeline builder page. 
 
 <img src="dolphinnext_images/build1-builderpage.png" width="80%">
 
@@ -133,9 +133,9 @@ Inputs:
   hisat2IndexPrefix(val) name: hisat2Index
       
 Outputs: 
-  mapped_reads(bam,set) name: val(name), file("${name}.bam")
   outputFileTxt(txt,file) name: "${name}.align_summary.txt"
-
+  mapped_reads(bam,set) name: val(name), file("${name}.bam")
+  
 Script:
   hisat2 -x ${hisat2Index} -U ${reads} -S ${name}.sam &> ${name}.align_summary.txt
   samtools view -bS ${name}.sam > ${name}.bam
@@ -181,7 +181,7 @@ Here Exercise 1 is finished. Please move to Exercise 2 to build the pipeline usi
 
 Once logged in, click to the pipeline button in the top left of the screen. You’ll notice Enter Pipeline Name box, just below the Pipelines button.
 
-Note*: If you could not finish the Exercise 1. Please "import" the [RNA-Seq-Tutorial.dn](https://raw.githubusercontent.com/UMMS-Biocore/dolphinnext-tutorial/master/RNA-Seq-Tutorial.dn) file in github using your pipeline builder and the processes defined in Exercise 1 will be in your left menu that you can use them while doing Exercise 2.
+**Note:** If you could not finish the Exercise 1. Please "import" the [RNA-Seq-Tutorial.dn](https://raw.githubusercontent.com/UMMS-Biocore/dolphinnext-tutorial/master/RNA-Seq-Tutorial.dn) file in github using your pipeline builder and the processes defined in Exercise 1 will be in your left menu that you can use them while doing Exercise 2.
 
 Before you start building the pipeline make sure you have the processes available in your menu.
 
