@@ -71,7 +71,9 @@ Once logged in, click on the pipeline tab in the top left of the screen to acces
 
 ### What is a "process"?
 
-Process is a basic programming element in nextflow to run user scripts. It usually have input, output parameters and script section. In this tutorial, you will see necesseary information to define a process shown in the left side of picture below. All that information need to be filled in "Add new process" screen shown in the middle in the picture below. DolphinNext will than convert this information to a nextflow process shown in the left side of the picture. Once a process created, it can be used in the pipeline builder. The example how it looks is shown in bottom left side in the picture. The mapping between the sections shown in colored rectangles.      
+Process is a basic programming element in Nextflow to run user scripts. Please [click here](https://www.nextflow.io/docs/latest/process.html) to learn more about Nextflow's processes.
+
+A process usually has inputs, outputs and script section. In this tutorial, you will see sections that include necesseary information to define a process shown in the left side of the picture below. Please, use that information to be fill "Add new process" form shown in the middle section the picture below. DolphinNext will then convert this information to a nextflow process shown in the left side of the picture. Once a process created, it can be used in the pipeline builder. The example how it looks is shown in the bottom left side in the picture. The mapping between the sections shown in colored rectangles.      
 
 <img src="dolphinnext_images/build-processmapping.png" width="100%">
 
@@ -84,12 +86,13 @@ Process is a basic programming element in nextflow to run user scripts. It usual
 You’ll notice several buttons at the left menu. New processes are created by clicking green “New process” button.
 
 ### 1. FastQC process
+**a.** First, please click, green “New process” button to open "Add New Process" modal.
 
-**a.** Please enter FastQC for the process name and define a new "Menu Group". We will add the processes into this group in the sidebar.
+**b.** Please enter FastQC for the process name and define a new "Menu Group". 
 
 <img src="dolphinnext_images/build2-fastqc-addmenugroup.png" width="80%">
 
-**b.** In the FastQC process, we have an input, an output and a line of a command we are going to use to execute the fastqc process. 
+**c.** In the FastQC process, we have an input, an output and a line of a command we are going to use to execute the fastqc process. Please click "Add New Process" button and use the information below to fill the "Add New Process" form.
 
 ```
 Name: "FastQC"
@@ -102,14 +105,9 @@ Outputs:
   
 Script:
   fastqc ${reads}
-```
+```  
 
-**c.** Let's add input and output parameters (`reads` and `outputFileHTML`) using "+" button in "Parameters" section:
-
-<img src="dolphinnext_images/build3-fastqc-addnewparam-reads.png" width="80%">   
-<img src="dolphinnext_images/build4-fastqc-addnewparam-outputFileHTML.png" width="80%">   
-
-**d.** After both parameters created. Lets select them and define their "Input Names" that we are going to use in the script section
+**d.** Lets select input and output parameters (`reads` and `outputFileHTML`) and define their "Input Names" that we are going to use in the script section.
 
 <img src="dolphinnext_images/build5-fastqc-parameters.png" width="100%">
  
@@ -126,7 +124,6 @@ Let's create Hisat2 process.
 **a.** First, please click, green “New process” button to open "Add New Process" modal.
 
 **b.** Inputs, outputs and scripts should be defined like below;
-Please add `hisat2IndexPrefix`, `mapped_reads` and `outputFileTxt` parameters by pressing "+" button next to "Parameters" section with the values below; 
 
 ```
 Name: "Hisat2"
@@ -144,35 +141,23 @@ Script:
   samtools view -bS ${name}.sam > ${name}.bam
 
 ```
-**c.** Add hisat2IndexPrefix parameter;
 
-<img src="dolphinnext_images/build7-hisat2-addnewparam-hisat2Index-prefix.png" width="80%">
-
-**d.** Add mapped_reads parameter;
-
-<img src="dolphinnext_images/build9-hisat2-addnewparams-mapped_reads.png" width="80%">
-
-**e.** Add outputFileTxt parameter;
-
-<img src="dolphinnext_images/build8-hisat2-addnewparams-outputFileTxt.png" width="80%">
-
-**f.** After you select input output parameters, add their names and enter the script. The page should look like this;
+**c.** After you select input output parameters (`hisat2IndexPrefix`, `mapped_reads` and `outputFileTxt` parameters), add their names and enter the script. The page should look like this;
 
 <img src="dolphinnext_images/build11-alignment-summary.png" width="80%">
 
-**g.** Please save changes before you close the screen.
+**d.** Please save changes before you close the screen.
 
 ### 3. RSeQC process
 
 **a.** First, please click, green “New process” button to open "Add New Process" modal.
 
-**b.** The form should be filled using the values below;
-Please add a new parameter called bedFile. 
+**b.** The form should be filled using the information below;
 
 ```
 Name: "RSeQC"
 Menu Group: "Tutorial"
-Inputs: 
+Inputs:
   mapped_reads(bam,set) name: val(name), file(bam)
   bedFile(bed,file) name: bed
   
@@ -183,24 +168,20 @@ Script:
   read_distribution.py  -i ${bam} -r ${bed}> RSeQC.${name}.txt
 ```
 
-**c.** Add bedFile parameter;
-
-<img src="dolphinnext_images/build12-bedFile.png" width="80%">
-
-**d.** After you select input output parameters, add their names and enter the script. The page should look like this;
+**c.** After you select input output parameters, enter their names and the script. The page should look like this;
 
 <img src="dolphinnext_images/build13-RSeQC-process.png" width="80%">
 
-**g.** Please, Save changes before you close the screen.
+**d.** Please, save changes before you close the screen.
 
-Here Exercise 1 is finished. Please move to Exercise 2 to build the pipeline using the processes you defined in Exercise 1. 
+Here Exercise 1 is finished. Please move to Exercise 2 to build the pipeline using the processes you created in Exercise 1. 
 
 ## Exercise 2 - Building a pipeline
 
 
-Once logged in, click on the pipeline button in the top left of the screen. You’ll notice Enter Pipeline Name box, just below the Pipelines button.
+Once logged in, click to the pipeline button in the top left of the screen. You’ll notice Enter Pipeline Name box, just below the Pipelines button.
 
-Note*: If you could not finish the Exercise 1. Please import the tutorial.dn file using your pipeline builder and the processes defined in Exercise 1 will be in your left menu that you can use then while doing Exercise 2.
+Note*: If you could not finish the Exercise 1. Please "import" the [RNA-Seq-Tutorial.dn](https://raw.githubusercontent.com/UMMS-Biocore/dolphinnext-tutorial/master/RNA-Seq-Tutorial.dn) file in github using your pipeline builder and the processes defined in Exercise 1 will be in your left menu that you can use them while doing Exercise 2.
 
 Before you start building the pipeline make sure you have the processes available in your menu.
 
@@ -208,15 +189,15 @@ Before you start building the pipeline make sure you have the processes availabl
 
 **a.** Please enter a name to your pipeline. E.g. "RNA-Seq-Tutorial" and select your menu group "public pipelines" and press save button.
 
-**b.** Please drag and drop FastQC, Hisat2 and RSeQC to the workspace;
+**b.** Please drag and drop FastQC, Hisat2 and RSeQC to your workspace;
 
 <img src="dolphinnext_images/build15-drag-drop.png" width="80%">
 
 **c.** Please drag and drop three Input parameters and change their names to "Input_Reads", "Hisat2_Index" and "bedFile" and connect them to their processes;     
 
-**d.** Connect your Hisat2 process with RSeQC process using mapped_reads parameter in both. You will see that, if the types match you can connect the two processes.
+**d.** Connect your Hisat2 process with RSeQC process using mapped_reads parameter in both. You will observe that, when the types match you can connect the two processes using their matching input and output parameters.
 
-**e.** Drag & Drop three output parameters and name them "FastQC_output", "Hisat2_Summary", and "RSeQC_output" and connect them to their corresponding processes. While naming, click their "Publish to Web Directory" and choose the right output format according to the output type of the process.
+**e.** Drag & Drop three "output parameters" from the side bar and name them "FastQC_output", "Hisat2_Summary", and "RSeQC_output" and connect them to their corresponding processes. While naming, click their "Publish to Web Directory" and choose the right output format according to the output type of the process.
  
 <img src="dolphinnext_images/build16-name1.png" width="50%">
 
@@ -244,43 +225,45 @@ You will then proceed by entering run name which will be added to your run list 
 <img src="dolphinnext_images/execute2_enter_runname.png" width="80%">
 
   **4.** Here, please enter your working directory, choose your "Run Environment", click "Use Singularity Image" and enter the values below;
-```
+<pre>
 Work Directory: /export/tests/test1
 Run Environment: Local
 Image Path: dolphinnext/rnaseq:1.0
 Run Options: --bind /export --bind /data
 
 Inputs:
-bedFile: /data/genome_data/mousetest/mm10/refseq_170804/genes/genes.bed
-Hisat2_Index: /data/genome_data/mousetest/mm10/refseq_170804/Hisat2Index/genome
-File Directory (Full Path): /data/fastq_data/single
-```  
+  - bedFile: /data/genome_data/mousetest/mm10/refseq_170804/genes/genes.bed (Use <b>Manually</b> tab)
+  - Hisat2_Index: /data/genome_data/mousetest/mm10/refseq_170804/Hisat2Index/genome (Use <b>Manually</b> tab)
+  - Input_Reads: First go to <b>Files</b> Tab in "<b>Select/Add Input File</b>" modal and click "<b>Add File</b>" button. 
+Then enter "File Directory (Full Path)" as: <b>/data/fastq_data/single</b> and follow <a href="#creating-collection">Creating Collection</a> section.
+</pre>  
 
 <img src="dolphinnext_images/execute3_enter_workdir.png" width="80%">
 
   **5.** Now we are ready to enter inputs we defined for the pipeline.
 Please choose "Manually" tab.
 First enter the location of the bed file. 
-bedFile:
+**bedFile:**
 ```
 /data/genome_data/mousetest/mm10/refseq_170804/genes/genes.bed
 ```
 <img src="dolphinnext_images/execute4_enter_bedfile.png" width="100%">
 
   **6.** Second enter the prefix for the hisat2 index files. Please choose "Manually" tab. 
-Hisat2_Index: 
+**Hisat2_Index:** 
 ```
 /data/genome_data/mousetest/mm10/refseq_170804/Hisat2Index/genome
 ```
 
 <img src="dolphinnext_images/execute5_enter_index.png" width="100%">
 
-  **7.** Now, we are ready to enter adding files;
+  #### Creating Collection
+  **7.**  Now, we are ready to add files;
 First go to Files Tab in "Select/Add Input File" modal and click "Add File" button
 
 <img src="dolphinnext_images/execute6_add_files.png" width="100%">
 
-  **8.** Enter the full path of the location of your files. Please choose "Files tab" and click "Add File" button. Here for the test case we will use the path below;
+  **8.**  Enter the full path of the location of your files. Please choose "Files tab" and click "Add File" button. Here for the test case we will use the path below;
 File Directory (Full Path): 
 ```
 /data/fastq_data/single
