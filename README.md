@@ -318,3 +318,67 @@ With this change there will be 3 parallel jobs.
 
 <img src="dolphinnext_images/execute19_parallel_run.png" width="100%">
 
+## Exercise 4 (optional) - Supporting both single and paired reads
+
+In order to support, both single and paired reads, we need to update FastQC and Hisat2 processes. Let's return back to pipeline page.
+
+### 1. Editing FastQC process
+
+**a.** First, please click, FastQC process from left sidebar menu to open "Edit Process" modal.
+
+**b.** In the inputs section, we need to add "mate" parameter as shown below:
+
+```
+Name: "FastQC"
+Menu Group: "Tutorial"
+Inputs: 
+  reads(fastq,set) name: val(name),file(reads)
+  mate(mate,val)   name: mate
+  
+Outputs: 
+  outputFileHTML(html,file) name: "*.html"
+  
+Script:
+  fastqc ${reads}
+``` 
+**c.** Click save button and then click save on existing button in the confirm revision window to overwrite changes. 
+
+### 2. Editing Hisat2 process
+
+Let's edit Hisat2 process. 
+
+**a.** First, please click, Hisat2 process from left sidebar menu to open "Edit Process" modal.
+
+**b.** In the inputs section, we need to add "mate" parameter and change the script section to support both "single" and "paired" reads as shown below:
+
+```
+Name: "Hisat2"
+Menu Group: "Tutorial"
+Inputs: 
+  reads(fastq,set)       name: val(name),file(reads)
+  hisat2IndexPrefix(val) name: hisat2Index
+  mate(mate,val)         name: mate
+  
+Outputs: 
+  outputFileTxt(txt,file) name: "${name}.align_summary.txt"
+  mapped_reads(bam,set) name: val(name), file("${name}.bam")
+  
+Script:
+  fileList = reads.toString().split(' ')
+  file1 = fileList[0]
+  file2 = ""
+  if (mate == "pair") {file2 =  fileList[1]}
+
+  """
+  if [ "${mate}" == "pair" ]; then
+      hisat2 -x ${hisat2Index} -1 ${file1} -2 ${file2} -S ${name}.sam &> ${name}.align_summary.txt
+  else
+      hisat2 -x ${hisat2Index} -U ${file1} -S ${name}.sam &> ${name}.align_summary.txt
+  fi
+  samtools view -bS ${name}.sam > ${name}.bam
+  """
+
+```
+**c.** Click save button and then click save on existing button in the confirm revision window to overwrite changes. 
+
+
