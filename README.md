@@ -364,6 +364,8 @@ Outputs:
   mapped_reads(bam,set) name: val(name), file("${name}.bam")
   
 Script:
+
+  script:
   fileList = reads.toString().split(' ')
   file1 = fileList[0]
   file2 = ""
