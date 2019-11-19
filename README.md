@@ -260,12 +260,13 @@ First go to Files Tab in "Select/Add Input File" modal and click "Add File" butt
 
 <img src="dolphinnext_images/execute6_add_files.png" width="100%">
 
-  **8.**  Enter the full path of the location of your files. Please choose "Files tab" and click "Add File" button. Here for the test case we will use the path below;
-File Directory (Full Path): 
+  **8.**  Enter the location of your files. Here for the test case we will use the url below for File Directory (Full Path) and please click "View Directory" button to get the list of files: 
+  
+File Directory (Full Path):
 ```
 https://galaxyweb.umassmed.edu/pub/dnext_data/tutorial/fastq_data/single/
 ```
-And choose "Single List" for the "Collection Type" and press add all files button.
+Then please choose "Single List" for the "Collection Type" and press "add all files" button.
 
 <img src="dolphinnext_images/execute7_enter_fullpath.png" width="100%">
 
