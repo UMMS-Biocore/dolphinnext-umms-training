@@ -179,11 +179,7 @@ Here Exercise 1 is finished. Please move to Exercise 2 to build the pipeline usi
 ## Exercise 2 - Building a pipeline
 
 
-Once logged in, click to the pipeline button in the top left of the screen. You’ll notice Enter Pipeline Name box, just below the Pipelines button.
-
-**Note:** If you could not finish the Exercise 1. Please "import" the [RNA-Seq-Tutorial.dn](https://raw.githubusercontent.com/UMMS-Biocore/dolphinnext-tutorial/master/RNA-Seq-Tutorial.dn) file in github using your pipeline builder and the processes defined in Exercise 1 will be in your left menu that you can use them while doing Exercise 2.
-
-Before you start building the pipeline make sure you have the processes available in your menu.
+Once logged in, click to the pipeline button in the top left of the screen. You’ll notice Enter Pipeline Name box, just below the Pipelines button. Before you start building the pipeline make sure you have the processes available in your menu.
 
 <img src="dolphinnext_images/build14-menu.png" width="50%">
 
@@ -228,6 +224,7 @@ You will then proceed by entering run name which will be added to your run list 
 <pre>
 Work Directory: /export/tests/test1
 Run Environment: Local
+Use Singularity Image: Checked
 Image Path: dolphinnext/rnaseq:1.0
 Run Options: --bind /export --bind /data
 
@@ -235,7 +232,7 @@ Inputs:
   - bedFile: /data/genome_data/mousetest/mm10/refseq_170804/genes/genes.bed (Use <b>Manually</b> tab)
   - Hisat2_Index: /data/genome_data/mousetest/mm10/refseq_170804/Hisat2Index/genome (Use <b>Manually</b> tab)
   - Input_Reads: First go to <b>Files</b> Tab in "<b>Select/Add Input File</b>" modal and click "<b>Add File</b>" button. 
-Then enter "File Directory (Full Path)" as: <b>/data/fastq_data/single</b> and follow <a href="#creating-collection">Creating Collection</a> section.
+Then enter "File Directory (Full Path)" as: <b>https://galaxyweb.umassmed.edu/pub/dnext_data/tutorial/fastq_data/single/</b> and follow <a href="#creating-collection">Creating Collection</a> section.
 </pre>  
 
 <img src="dolphinnext_images/execute3_enter_workdir.png" width="80%">
@@ -266,7 +263,7 @@ First go to Files Tab in "Select/Add Input File" modal and click "Add File" butt
   **8.**  Enter the full path of the location of your files. Please choose "Files tab" and click "Add File" button. Here for the test case we will use the path below;
 File Directory (Full Path): 
 ```
-/data/fastq_data/single
+https://galaxyweb.umassmed.edu/pub/dnext_data/tutorial/fastq_data/single/
 ```
 And choose "Single List" for the "Collection Type" and press add all files button.
 
