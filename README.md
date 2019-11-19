@@ -129,12 +129,12 @@ Let's create Hisat2 process.
 Name: "Hisat2"
 Menu Group: "Tutorial"
 Inputs: 
-  reads(fastq,set) name: val(name),file(reads)
+  reads(fastq,set)       name: val(name),file(reads)
   hisat2IndexPrefix(val) name: hisat2Index
       
 Outputs: 
   outputFileTxt(txt,file) name: "${name}.align_summary.txt"
-  mapped_reads(bam,set) name: val(name), file("${name}.bam")
+  mapped_reads(bam,set)   name: val(name), file("${name}.bam")
   
 Script:
   hisat2 -x ${hisat2Index} -U ${reads} -S ${name}.sam &> ${name}.align_summary.txt
@@ -159,7 +159,7 @@ Name: "RSeQC"
 Menu Group: "Tutorial"
 Inputs:
   mapped_reads(bam,set) name: val(name), file(bam)
-  bedFile(bed,file) name: bed
+  bedFile(bed,file)     name: bed
   
 Outputs: 
   outputFileTxt(txt,file) name: "RSeQC.${name}.txt"
