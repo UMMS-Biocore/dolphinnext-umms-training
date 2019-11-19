@@ -28,7 +28,7 @@ Our aim is;
 Expected learning outcome
 ========
 
-To understand the basics of DolphinNext, how to use pipeline builder for different objectives and to familiarize yourself with some standard software packages for such analysis.
+To understand the basics of DolphinNext, how to use pipeline builder for different objectives and to familiarize yourself with Nextflow and some standard software packages for such analysis.
 
 Overview
 ========
@@ -39,12 +39,20 @@ Overview
     * [Hisat2 process](#2-hisat2-process)
     * [RSeQC process](#3-rseqc-process)
   * [Exercise 2: Building a pipeline](#exercise-2---building-a-pipeline)
-  * [Exercise 3: Running a pipeline](#exercise-3---running-a-pipeline)
+  * [Exercise 3: Running a pipeline](#exercise-3---executing-a-pipeline)
 
 
 If you prefer, you can click on the video links to follow the tutorial in a video.
 
-[![Watch the video](dolphinnext_images/developer_guide1_youtube.png)](https://youtu.be/Q3P7eN2CRtc)
+[![Watch the video](dolphinnext_images/developer_guide1_youtube.png)](https://youtu.be/zfLXCgJFls4)
+
+**Video Summary:**
+  * Exercise 1: Creating processes
+    - FastQC process [at 0:07](https://youtu.be/zfLXCgJFls4?t=7)
+    - Hisat2 process [at 0:55](https://youtu.be/zfLXCgJFls4?t=55)
+    - RSeQC process [at 2:02](https://youtu.be/zfLXCgJFls4?t=122)
+  * Exercise 2: Building a pipeline [at 2:43](https://youtu.be/zfLXCgJFls4?t=163)
+  * Exercise 3: Running a pipeline [at 4:34](https://youtu.be/zfLXCgJFls4?t=274)
 
 **Video Summary:**
   * Exercise 1: Creating processes
