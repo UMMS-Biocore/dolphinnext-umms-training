@@ -65,7 +65,7 @@ This guide will walk you through how to start using DolphinNext pipelines and cr
 
 ## Exercise 1 - Creating processes
 
-Once logged in, click on the "Pipeline" button in the top left of the screen to access pipeline builder page. 
+Once logged in, click on the "Pipelines" link at the top menu to access pipeline builder page. Here you can write a summary descripton about your pipeline using "Description" tab, start developing your pipeline using "Workflow" tab, and adding extra files or setting some extra parameters using "Advanced" tab. Let's get into some details about the pipeline elements.
 
 <img src="dolphinnext_images/build1-builderpage.png" width="80%">
 
@@ -73,7 +73,7 @@ Once logged in, click on the "Pipeline" button in the top left of the screen to 
 
 Process is a basic programming element in Nextflow to run user scripts. Please [click here](https://www.nextflow.io/docs/latest/process.html) to learn more about Nextflow's processes.
 
-A process usually has inputs, outputs and script section. In this tutorial, you will see sections that include necesseary information to define a process shown in the left side of the picture below. Please, use that information to be fill "Add new process" form shown in the middle section the picture below. DolphinNext will then convert this information to a nextflow process shown in the left side of the picture. Once a process created, it can be used in the pipeline builder. The example how it looks is shown in the bottom left side in the picture. The mapping between the sections shown in colored rectangles.      
+A process usually has inputs, outputs and script sections. In this tutorial, you will see sections that include necesseary information to define a process shown in the left side of the picture below. Please, use that information to fill "Add new process" form shown in the middle section in the picture below. DolphinNext will then convert this information to a nextflow process shown in the left side of the picture. Once a process created, it can be used in the pipeline builder. The example how it looks is shown in the bottom left side in the picture. The mapping between the sections shown in colored rectangles.      
 
 <img src="dolphinnext_images/build-processmapping.png" width="100%">
 
@@ -86,13 +86,13 @@ A process usually has inputs, outputs and script section. In this tutorial, you 
 You’ll notice several buttons at the left menu. New processes are created by clicking green “New process” button.
 
 ### 1. FastQC process
-**a.** First, please click, green “New process” button to open "Add New Process" modal.
+**a.** First, please click, blue “New process” button <img src="dolphinnext_images/addprocessbutton.png"> in the left menu to open "Add New Process" modal.
 
 **b.** Please enter FastQC for the process name and define a new "Menu Group". 
 
 <img src="dolphinnext_images/build2-fastqc-addmenugroup.png" width="80%">
 
-**c.** In the FastQC process, we have an input, an output and a line of a command we are going to use to execute the fastqc process. Please click "Add New Process" button and use the information below to fill the "Add New Process" form.
+**c.** In the FastQC process, we have an input, an output and a line of a command we are going to use to execute the fastqc process.
 
 ```
 Name: "FastQC"
