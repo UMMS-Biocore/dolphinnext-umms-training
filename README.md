@@ -86,7 +86,7 @@ A process usually has inputs, outputs and script sections. In this tutorial, you
 You’ll notice several buttons at the left menu. New processes are created by clicking green “New process” button.
 
 ### 1. FastQC process
-**a.** First, please click, blue “New process” button <img src="dolphinnext_images/addprocessbutton.png" width="40%"> in the left menu to open "Add New Process" modal.
+**a.** First, please click, blue “New process” button <img src="dolphinnext_images/addprocessbutton.png" width="5%"> in the left menu to open "Add New Process" modal.
 
 **b.** Please enter FastQC for the process name and define a new "Menu Group". 
 
