@@ -400,7 +400,7 @@ Script:
 
 **b.** Click "Save Pipeline" button to give permission to update pipeline. Confirm Revision window will show up as shown below. Simply click "Save on Existing" button to keep saving on existing revision.
 
-<img src="dolphinnext_images/mate3-confirm_pipeline_rev.png" width="30%">
+<img src="dolphinnext_images/mate4-confirm_pipeline_rev.png" width="30%">
 
 **c.** Please drag and drop one **Input parameter** and change its name to "mate" and Dropdown Options "single,pair" as shown at below.
 
