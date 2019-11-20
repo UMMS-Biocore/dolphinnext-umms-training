@@ -40,7 +40,7 @@ Overview
     * [RSeQC process](#3-rseqc-process)
   * [Exercise 2: Building a pipeline](#exercise-2---building-a-pipeline)
   * [Exercise 3: Running a pipeline](#exercise-3---executing-a-pipeline)
-  * [Exercise 4 (optional): Supporting dingle and paired end reads](#exercise-4-optional---supporting-both-single-and-paired-reads)
+  * [Exercise 4 (optional): Supporting single and paired end reads](#exercise-4-optional---supporting-both-single-and-paired-end-reads)
 
 
 If you prefer, you can click on the video links to follow the tutorial in a video.
@@ -315,7 +315,7 @@ collection name: test collection
 <img src="dolphinnext_images/execute17_RSeQC.png" width="100%">
 
 
-## Exercise 4 (optional) - Supporting both single and paired reads
+## Exercise 4 (optional) - Supporting both single and paired end reads
 
 In order to support, both single and paired reads, we need to update FastQC and Hisat2 processes. Let's return back to pipeline page by clicking pipeline button at the top left menu and then choose our pipeline (eg. "RNA-Seq-Tutorial") from left sidebar.
 
