@@ -258,13 +258,12 @@ Then enter "File Directory (Full Path)" as: <b>https://galaxyweb.umassmed.edu/pu
 </pre>  
 
 
-  **5.** Now we are ready to enter inputs we defined for the pipeline. Please choose "Manually" tab.First enter the location of the bed file. 
+  **5.** Now, we are ready to enter inputs we defined for the pipeline. Please choose "Manually" tab.First enter the location of the bed file. 
 
   **6.** Second enter the prefix for the hisat2 index files. Please choose "Manually" tab. 
 
   #### Creating Collection
-  **7.**  Now, we are ready to add files;
-First go to Files Tab in "Select/Add Input File" modal and click "Add File" button
+  **7.**  In order to add files; First go to Files Tab in "Select/Add Input File" modal and click "Add File" button
 
 <img src="dolphinnext_images/execute6_add_files.png" width="100%">
 
@@ -324,12 +323,12 @@ With this change there will be 3 parallel jobs.
 
 ## Exercise 4 (optional) - Supporting both single and paired reads
 
-In order to support, both single and paired reads, we need to update FastQC and Hisat2 processes. Let's return back to pipeline page by clicking pipeline button at the top left menu and then choosing our pipeline from left sidebar.
+In order to support, both single and paired reads, we need to update FastQC and Hisat2 processes. Let's return back to pipeline page by clicking pipeline button at the top left menu and then choose our pipeline (eg. "RNA-Seq-Tutorial") from left sidebar.
 
 ---
 **Explanation about Mate Parameter**
 
-When we add "mate" parameter as an input, DolphinNext will realize that "reads" could be single or paired structure. Besides we will define two default option for mate parameter: "single" and "pair" to direct user. Finally, our pipeline will support both file structures.
+When we add "mate" parameter as an input, DolphinNext will realize that "reads" could be single or paired structure. Additionally, we will define two dropdown option for mate parameter: "single" and "pair" which will direct users. Finally, our pipeline will support both of the file structures.
 
 ---
 
@@ -423,7 +422,7 @@ Script:
 
 ### 4. Executing Updated Pipeline
 
-**1.** It's time to reload our changes into our run page. We can easily go back to our run by clicking down arrow icon at the top right of the pipeline as shown below. Please click "Existing runs" button. 
+**1.** It's time to reload our changes into our run page. We can easily go back to our run by clicking down arrow at the top right of the pipeline as shown below. Then please click "Existing runs" button. 
 
 <img src="dolphinnext_images/mate8-existingruns.png" width="30%">
 
