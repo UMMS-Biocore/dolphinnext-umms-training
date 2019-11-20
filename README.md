@@ -341,7 +341,12 @@ Outputs:
 Script:
   fastqc ${reads}
 ``` 
+
+<img src="dolphinnext_images/mate1-fastqc.png" width="50%">
+
 **c.** Click save button and then click save on existing button in the confirm revision window to overwrite changes. 
+
+<img src="dolphinnext_images/mate3-confirm_process_rev" width="30%">
 
 ### 2. Editing Hisat2 process
 
@@ -381,6 +386,29 @@ Script:
   """
 
 ```
+<img src="dolphinnext_images/mate2-hisat2.png" width="50%">
+
 **c.** Click save button and then click save on existing button in the confirm revision window to overwrite changes. 
 
+<img src="dolphinnext_images/mate3-confirm_process_rev" width="30%">
+
+### 3. Editing Pipeline
+
+**a.** Now we're ready to update our pipeline. First refresh the page and reload new "mate" parameter in the workflow.
+
+<img src="dolphinnext_images/mate5-pipeline-reload" width="50%">
+
+**b.** Click "Save Pipeline" button to give permission to update pipeline. Confirm Revision window will show up as shown below. Simply click "Save on Existing" button to keep saving on existing revision.
+
+<img src="dolphinnext_images/mate3-confirm_pipeline_rev" width="30%">
+
+**c.** Please drag and drop one **Input parameter** and change its name to "mate" and Dropdown Options "single,pair" as shown at below.
+
+<img src="dolphinnext_images/mate6-inputparameter" width="50%">
+
+**d.** Connect "mate" input parameter to their processes; FastQC and Hisat2 as shown below.
+
+<img src="dolphinnext_images/mate7-pipeline-connected" width="50%">
+
+### 4. Running Updated Pipeline
 
