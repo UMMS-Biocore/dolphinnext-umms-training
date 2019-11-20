@@ -40,6 +40,7 @@ Overview
     * [RSeQC process](#3-rseqc-process)
   * [Exercise 2: Building a pipeline](#exercise-2---building-a-pipeline)
   * [Exercise 3: Running a pipeline](#exercise-3---executing-a-pipeline)
+  * [Exercise 4 (optional): ](#exercise-4-(optional)---supporting-both-single-and-paired-reads)
 
 
 If you prefer, you can click on the video links to follow the tutorial in a video.
@@ -296,7 +297,7 @@ collection name: test collection
 <img src="dolphinnext_images/execute11_logtab.png" width="100%">
 
   **b. Timeline**:
-<img src="dolphinnext_images/execute12_timeline.png" width="100%">
+<img src="dolphinnext_images/execute19_parallel_run.png" width="100%">
 
   **c. Nextflow Reports**:
 <img src="dolphinnext_images/execute13_nextflowreports.png" width="100%">
@@ -313,13 +314,6 @@ collection name: test collection
   **c. RSeQC**
 <img src="dolphinnext_images/execute17_RSeQC.png" width="100%">
 
-  **14.** As you can tell from Timeline report, it used only a cpu and it didn't parallelize the run. To be able to start parallel runs, the profile for the environment should be changed.
-
-<img src="dolphinnext_images/execute18_profile_fix.png" width="100%">
-
-With this change there will be 3 parallel jobs.
-
-<img src="dolphinnext_images/execute19_parallel_run.png" width="100%">
 
 ## Exercise 4 (optional) - Supporting both single and paired reads
 
