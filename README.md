@@ -40,7 +40,7 @@ Overview
     * [RSeQC process](#3-rseqc-process)
   * [Exercise 2: Building a pipeline](#exercise-2---building-a-pipeline)
   * [Exercise 3: Running a pipeline](#exercise-3---executing-a-pipeline)
-  * [Exercise 4 (optional): ](#exercise-4-(optional)---supporting-both-single-and-paired-reads)
+  * [Exercise 4 (optional): Supporting dingle and paired end reads](#exercise-4-optional---supporting-both-single-and-paired-reads)
 
 
 If you prefer, you can click on the video links to follow the tutorial in a video.
