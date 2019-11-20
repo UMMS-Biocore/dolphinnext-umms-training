@@ -226,7 +226,7 @@ You will then proceed by entering run name which will be added to your run list 
 Work Directory: /export/tests/test-<b>youruserid</b>
 Run Environment: Local
 Use Singularity Image: Checked
-Image Path: https://galaxyweb.umassmed.edu/pub/dnext_data/singularity/UMMS-Biocore-rna-seq-1.0.img
+Image Path: dolphinnext/rnaseq:1.0
 Run Options: --bind /export --bind /data
 
 Inputs:
@@ -235,6 +235,8 @@ Inputs:
   - Input_Reads: First go to <b>Files</b> Tab in "<b>Select/Add Input File</b>" modal and click "<b>Add File</b>" button. 
 Then enter "File Directory (Full Path)" as: <b>https://galaxyweb.umassmed.edu/pub/dnext_data/tutorial/fastq_data/single/</b> and follow <a href="#creating-collection">Creating Collection</a> section.
 </pre>  
+
+<img src="dolphinnext_images/execute3_enter_workdir.png" width="80%">
 
 <pre>
 <b>For GHPCC Users</b>
@@ -251,8 +253,9 @@ Inputs:
 Then enter "File Directory (Full Path)" as: <b>https://galaxyweb.umassmed.edu/pub/dnext_data/tutorial/fastq_data/single/</b> and follow <a href="#creating-collection">Creating Collection</a> section.
 </pre>  
 
-
 <img src="dolphinnext_images/execute3_enter_workdir.png" width="80%">
+
+
 
   **5.** Now we are ready to enter inputs we defined for the pipeline. Please choose "Manually" tab.First enter the location of the bed file. 
 
