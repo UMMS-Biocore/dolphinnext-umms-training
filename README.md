@@ -408,7 +408,7 @@ Script:
 
 **d.** Connect "mate" input parameter to their processes; FastQC and Hisat2 as shown below.
 
-<img src="dolphinnext_images/mate7-pipeline-connected.png" width="70%">
+<img src="dolphinnext_images/mate7-pipeline-connected.png" width="100%">
 
 ### 4. Running Updated Pipeline
 
