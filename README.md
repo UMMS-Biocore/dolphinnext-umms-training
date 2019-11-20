@@ -425,11 +425,11 @@ Script:
 
 **1.** It's time to reload our changes into our run page. We can easily go back to our run by clicking down arrow icon at the top right of the pipeline as shown below. Please click "Existing runs" button. 
 
-<img src="dolphinnext_images/mate8-existingruns.png" width="70%">
+<img src="dolphinnext_images/mate8-existingruns.png" width="30%">
 
 **2.** Then choose our run and click "Go to Run" button as shown below.
 
-<img src="dolphinnext_images/mate9-gotoexistingrun.png" width="70%">
+<img src="dolphinnext_images/mate9-gotoexistingrun.png" width="90%">
 
 **3.** When run page reloads, you will see that mate parameter is added into inputs section as shown at below. Please choose as "pair".
 
@@ -439,29 +439,33 @@ Script:
 
 **4.** Now we need to add paired collection by clicking edit button of the "test collection". Then go to Files Tab in "Select/Add Input File" modal and click "Add File" button
 
-<img src="dolphinnext_images/mate11-editcollection.png" width="80%">
+<img src="dolphinnext_images/mate11-editcollection.png" width="90%">
 
-**5.**  Here for the test case we will use the paired read url below for File Directory (Full Path). Please click "View Directory" button to get the list of files: 
+**5.**  Here for the test case we will use the url of the paired reads. Please click "View Directory" button to get the list of files: 
   
 File Directory (Full Path):
 ```
 https://galaxyweb.umassmed.edu/pub/dnext_data/tutorial/fastq_data/pair/
 ```
-Then please choose "Paired List" for the "Collection Type" and press "add all files" button.
+**6.** Then please choose "Paired List" for the "Collection Type" and enter forward and reverse file patterns to match paired files. Now you can press "add all files" button.
+```
+Forward Pattern: .1
+Reverse Pattern: .2
+```
 
 <img src="dolphinnext_images/mate12-pairedlist.png" width="100%">
 
-**6.** Enter a collection name and "save files".
+**7.** Enter a new collection name and "save files".
 ```
 collection name: paired test collection
 ```
 <img src="dolphinnext_images/mate13-collection.png" width="100%">
 
-**7.** In the next screen, please click "Save file" button to process all samples.
+**8.** In the next screen, please click "Save file" button to process all samples.
 
 <img src="dolphinnext_images/mate14-savecallection.png" width="100%">
 
-**8.** Before executing our run, just change the work directory to save outputs into separate directory.
+**9.** Before executing our run, just change the work directory to save outputs into separate directory.
 
   **4A. For Test Users**
 
@@ -475,7 +479,7 @@ collection name: paired test collection
   Work Directory: /home/<b>yourclusterusername</b>/test2
   </pre>  
   
-**9.** Finally, click rerun button to execute your run.
+**10.** Finally, click rerun button to execute your run.
 
 
 
