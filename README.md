@@ -222,10 +222,11 @@ You will then proceed by entering run name which will be added to your run list 
 
   **4.** Here, please enter your working directory, choose your "Run Environment", click "Use Singularity Image" and enter the values below;
 <pre>
-Work Directory: /export/tests/test1
+<b>For Test Users</b>
+Work Directory: /export/tests/test-<b>youruserid</b>
 Run Environment: Local
 Use Singularity Image: Checked
-Image Path: dolphinnext/rnaseq:1.0
+Image Path: https://galaxyweb.umassmed.edu/pub/dnext_data/singularity/UMMS-Biocore-rna-seq-1.0.img
 Run Options: --bind /export --bind /data
 
 Inputs:
@@ -235,24 +236,27 @@ Inputs:
 Then enter "File Directory (Full Path)" as: <b>https://galaxyweb.umassmed.edu/pub/dnext_data/tutorial/fastq_data/single/</b> and follow <a href="#creating-collection">Creating Collection</a> section.
 </pre>  
 
+<pre>
+<b>For GHPCC Users</b>
+Work Directory: /home/<b>yourclusterusername</b>/test1
+Run Environment: GHPCC
+Use Singularity Image: Checked
+Image Path: https://galaxyweb.umassmed.edu/pub/dnext_data/singularity/UMMS-Biocore-rna-seq-1.0.img
+Run Options: --bind /project
+
+Inputs:
+  - bedFile: /project/umw_biocore/training/genes.bed (Use <b>Manually</b> tab)
+  - Hisat2_Index: /project/umw_biocore/training/Hisat2Index/genome (Use <b>Manually</b> tab)
+  - Input_Reads: First go to <b>Files</b> Tab in "<b>Select/Add Input File</b>" modal and click "<b>Add File</b>" button. 
+Then enter "File Directory (Full Path)" as: <b>https://galaxyweb.umassmed.edu/pub/dnext_data/tutorial/fastq_data/single/</b> and follow <a href="#creating-collection">Creating Collection</a> section.
+</pre>  
+
+
 <img src="dolphinnext_images/execute3_enter_workdir.png" width="80%">
 
-  **5.** Now we are ready to enter inputs we defined for the pipeline.
-Please choose "Manually" tab.
-First enter the location of the bed file. 
-**bedFile:**
-```
-/data/genome_data/mousetest/mm10/refseq_170804/genes/genes.bed
-```
-<img src="dolphinnext_images/execute4_enter_bedfile.png" width="100%">
+  **5.** Now we are ready to enter inputs we defined for the pipeline. Please choose "Manually" tab.First enter the location of the bed file. 
 
   **6.** Second enter the prefix for the hisat2 index files. Please choose "Manually" tab. 
-**Hisat2_Index:** 
-```
-/data/genome_data/mousetest/mm10/refseq_170804/Hisat2Index/genome
-```
-
-<img src="dolphinnext_images/execute5_enter_index.png" width="100%">
 
   #### Creating Collection
   **7.**  Now, we are ready to add files;
@@ -280,13 +284,9 @@ collection name: test collection
 
 <img src="dolphinnext_images/execute_9_choosefiles.png" width="100%">
 
-  **11.** After we fill the inputs it should look like below and the orange "Waiting" button at the top right should turn to green "Ready to Run" button;
+  **11.** After we fill the inputs,  the orange "Waiting" button at the top right should turn to green "Ready to Run" button. Press that "Ready to Run" button.
 
-<img src="dolphinnext_images/execute10_filled_inputs.png" width="100%">
-
-  **12.** Press that "Ready to Run" button.
-
-  **13.** All run should finish in a couple of minutes. When the run finalized the log section will be look like below;
+  **12.** All run should finish in a couple of minutes. When the run finalized the log section will be look like below;
 
   **a. Logs**:
 
@@ -298,7 +298,7 @@ collection name: test collection
   **c. Nextflow Reports**:
 <img src="dolphinnext_images/execute13_nextflowreports.png" width="100%">
 
-  **14.** In the report section, you can monitor all defined reports in the pipeline;
+  **13.** In the report section, you can monitor all defined reports in the pipeline;
 <img src="dolphinnext_images/execute14_Reports.png" width="100%">
 
   **a. FastQC**
@@ -310,7 +310,7 @@ collection name: test collection
   **c. RSeQC**
 <img src="dolphinnext_images/execute17_RSeQC.png" width="100%">
 
-  **15.** As you can tell from Timeline report, it used only a cpu and it didn't parallelize the run. To be able to start parallel runs, the profile for the environment should be changed.
+  **14.** As you can tell from Timeline report, it used only a cpu and it didn't parallelize the run. To be able to start parallel runs, the profile for the environment should be changed.
 
 <img src="dolphinnext_images/execute18_profile_fix.png" width="100%">
 
