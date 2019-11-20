@@ -254,7 +254,7 @@ Inputs:
   - Input_Reads: First go to <b>Files</b> Tab in "<b>Select/Add Input File</b>" modal and click "<b>Add File</b>" button. 
 Then enter "File Directory (Full Path)" as: <b>https://galaxyweb.umassmed.edu/pub/dnext_data/tutorial/fastq_data/single/</b> and follow <a href="#creating-collection">Creating Collection</a> section.
 
-<img src="dolphinnext_images/execute3_enter_workdir.png" width="80%">
+<img src="dolphinnext_images/execute20-ghpcc.png" width="100%">
 </pre>  
 
 
