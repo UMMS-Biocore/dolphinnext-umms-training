@@ -221,8 +221,9 @@ You will then proceed by entering run name which will be added to your run list 
 <img src="dolphinnext_images/execute2_enter_runname.png" width="80%">
 
   **4.** Here, please enter your working directory, choose your "Run Environment", click "Use Singularity Image" and enter the values below;
+  
+  **4A. For Test Users**
 <pre>
-<b>For Test Users</b>
 Work Directory: /export/tests/test-<b>youruserid</b>
 Run Environment: Local
 Use Singularity Image: Checked
@@ -234,12 +235,13 @@ Inputs:
   - Hisat2_Index: /data/genome_data/mousetest/mm10/refseq_170804/Hisat2Index/genome (Use <b>Manually</b> tab)
   - Input_Reads: First go to <b>Files</b> Tab in "<b>Select/Add Input File</b>" modal and click "<b>Add File</b>" button. 
 Then enter "File Directory (Full Path)" as: <b>https://galaxyweb.umassmed.edu/pub/dnext_data/tutorial/fastq_data/single/</b> and follow <a href="#creating-collection">Creating Collection</a> section.
-</pre>  
 
 <img src="dolphinnext_images/execute3_enter_workdir.png" width="80%">
+</pre>  
+
+  **4B. For GHPCC Users**
 
 <pre>
-<b>For GHPCC Users</b>
 Work Directory: /home/<b>yourclusterusername</b>/test1
 Run Environment: UMASS Cluster
 Use Singularity Image: Checked
@@ -251,10 +253,9 @@ Inputs:
   - Hisat2_Index: /project/umw_biocore/training/Hisat2Index/genome (Use <b>Manually</b> tab)
   - Input_Reads: First go to <b>Files</b> Tab in "<b>Select/Add Input File</b>" modal and click "<b>Add File</b>" button. 
 Then enter "File Directory (Full Path)" as: <b>https://galaxyweb.umassmed.edu/pub/dnext_data/tutorial/fastq_data/single/</b> and follow <a href="#creating-collection">Creating Collection</a> section.
-</pre>  
 
 <img src="dolphinnext_images/execute3_enter_workdir.png" width="80%">
-
+</pre>  
 
 
   **5.** Now we are ready to enter inputs we defined for the pipeline. Please choose "Manually" tab.First enter the location of the bed file. 
@@ -323,7 +324,14 @@ With this change there will be 3 parallel jobs.
 
 ## Exercise 4 (optional) - Supporting both single and paired reads
 
-In order to support, both single and paired reads, we need to update FastQC and Hisat2 processes. Let's return back to pipeline page.
+In order to support, both single and paired reads, we need to update FastQC and Hisat2 processes. Let's return back to pipeline page by clicking pipeline button at the top left menu and then choosing our pipeline from left sidebar.
+
+---
+**Explanation about Mate Parameter**
+
+When we add "mate" parameter as an input, DolphinNext will realize that "reads" could be single or paired structure. Besides we will define two default option for mate parameter: "single" and "pair" to direct user. Finally, our pipeline will support both file structures.
+
+---
 
 ### 1. Editing FastQC process
 
@@ -413,5 +421,62 @@ Script:
 
 <img src="dolphinnext_images/mate7-pipeline-connected.png" width="100%">
 
-### 4. Running Updated Pipeline
+### 4. Executing Updated Pipeline
+
+**1.** It's time to reload our changes into our run page. We can easily go back to our run by clicking down arrow icon at the top right of the pipeline as shown below. Please click "Existing runs" button. 
+
+<img src="dolphinnext_images/mate8-existingruns.png" width="70%">
+
+**2.** Then choose our run and click "Go to Run" button as shown below.
+
+<img src="dolphinnext_images/mate9-gotoexistingrun.png" width="70%">
+
+**3.** When run page reloads, you will see that mate parameter is added into inputs section as shown at below. Please choose as "pair".
+
+<img src="dolphinnext_images/mate10-mateparameter.png" width="70%">
+
+#### Creating Paired Collection
+
+**4.** Now we need to add paired collection by clicking edit button of the "test collection". Then go to Files Tab in "Select/Add Input File" modal and click "Add File" button
+
+<img src="dolphinnext_images/mate11-editcollection.png" width="80%">
+
+**5.**  Here for the test case we will use the paired read url below for File Directory (Full Path). Please click "View Directory" button to get the list of files: 
+  
+File Directory (Full Path):
+```
+https://galaxyweb.umassmed.edu/pub/dnext_data/tutorial/fastq_data/pair/
+```
+Then please choose "Paired List" for the "Collection Type" and press "add all files" button.
+
+<img src="dolphinnext_images/mate12-pairedlist.png" width="100%">
+
+**6.** Enter a collection name and "save files".
+```
+collection name: paired test collection
+```
+<img src="dolphinnext_images/mate13-collection.png" width="100%">
+
+**7.** In the next screen, please click "Save file" button to process all samples.
+
+<img src="dolphinnext_images/mate14-savecallection.png" width="100%">
+
+**8.** Before executing our run, just change the work directory to save outputs into separate directory.
+
+  **4A. For Test Users**
+
+  <pre>
+  Work Directory: /export/tests/<b>pairedtest</b>-<b>youruserid</b>
+  </pre>  
+
+  **4B. For GHPCC Users**
+
+  <pre>
+  Work Directory: /home/<b>yourclusterusername</b>/test2
+  </pre>  
+  
+**9.** Finally, click rerun button to execute your run.
+
+
+
 
