@@ -239,7 +239,7 @@ Then enter "File Directory (Full Path)" as: <b>https://galaxyweb.umassmed.edu/pu
 <pre>
 <b>For GHPCC Users</b>
 Work Directory: /home/<b>yourclusterusername</b>/test1
-Run Environment: GHPCC
+Run Environment: UMASS Cluster
 Use Singularity Image: Checked
 Image Path: https://galaxyweb.umassmed.edu/pub/dnext_data/singularity/UMMS-Biocore-rna-seq-1.0.img
 Run Options: --bind /project
