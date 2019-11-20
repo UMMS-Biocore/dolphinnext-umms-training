@@ -342,11 +342,11 @@ Script:
   fastqc ${reads}
 ``` 
 
-<img src="dolphinnext_images/mate1-fastqc.png" width="50%">
+<img src="dolphinnext_images/mate1-fastqc.png" width="100%">
 
 **c.** Click save button and then click save on existing button in the confirm revision window to overwrite changes. 
 
-<img src="dolphinnext_images/mate3-confirm_process_rev" width="30%">
+<img src="dolphinnext_images/mate3-confirm_process_rev" width="50%">
 
 ### 2. Editing Hisat2 process
 
@@ -390,7 +390,7 @@ Script:
 
 **c.** Click save button and then click save on existing button in the confirm revision window to overwrite changes. 
 
-<img src="dolphinnext_images/mate3-confirm_process_rev.png" width="30%">
+<img src="dolphinnext_images/mate3-confirm_process_rev.png" width="50%">
 
 ### 3. Editing Pipeline
 
